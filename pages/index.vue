@@ -1,5 +1,6 @@
 <template>
   <section>
+    <sec-header></sec-header>
     <sec-hero></sec-hero>
     <sec-about></sec-about>
     <sec-access></sec-access>
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+  import secHeader from '~/components/header.vue'
   import secHero from '~/components/pages/Top/Hero.vue'
   import secAbout from '~/components/pages/Top/About.vue'
   import secAccess from '~/components/pages/Top/Access.vue'
@@ -27,6 +29,7 @@
       }
     },
     components: {
+      secHeader,
       secHero,
       secAbout,
       secAccess,
