@@ -52,7 +52,7 @@
     margin: 0 auto;
     width: 210vw;
     max-width: 1920px;
-    min-height: 540px;
+    min-height: 610px;
     background-size: contain;
     background-image: url( "~assets/images/hero/hero_cloud.svg");
     background-repeat: no-repeat;
@@ -77,7 +77,7 @@
     transform: translateX(-43%);
     @include media_desktop {
       width: 100vw;
-      min-width: 1880px;
+      min-width: 2200px;
     }
 
     &::after {
@@ -93,8 +93,8 @@
 
   .logo {
     display: inline-block;
-    margin-top: 40px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-bottom: 20px;
     width: 210px;
     height: 210px;
     transform: translateX(20%);
@@ -102,9 +102,9 @@
     @include media_desktop {
       display: inline-block;
       margin-top: 50px;
-      margin-bottom: 20px;
-      width: 310px;
-      height: 310px;
+      margin-bottom: 0;
+      width: 290px;
+      height: 290px;
       transform: translateX(90px);
     }
   }
@@ -120,13 +120,14 @@
     font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
     font-size: 1.8rem;
     color: #FFF9ED;
-    transform: translateX(20px);
+    text-shadow: 0 0 3px rgba(0,0,0,.3);
+    transform: translateX(15px);
     position: relative;
     z-index: 200;
 
     @include media_desktop {
       font-size: 2.5rem;
-      transform: translateX(30px);
+      transform: translateX(20px);
     }
   }
   .year {
@@ -168,8 +169,12 @@
     font-family: "Yu Gothic Medium", YuGothic, "Yu Gothic","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     letter-spacing: 2px;
     color: #FFF9ED;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-decoration: underline;
+
+    @include media_desktop {
+      font-size: 2rem;
+    }
 
     .icon {
       display: inline-block;
@@ -185,12 +190,20 @@
     width: 100%;
     font-size: 1.8rem;
     color: white;
-    transform: translateX(20px);
     position: relative;
+    transform: translateX(15px);
     z-index: 200;
+
+    @include media_desktop {
+      font-size: 2.5rem;
+      transform: translateX(20px);
+    }
+
   }
 
-  @mixin button($icon:'\f054') {
+
+
+  .btn_ticket {
     display: block;
     margin-bottom: 15px;
     padding: 10px;
@@ -207,7 +220,7 @@
     }
 
     &::after {
-      content: "#{$icon}";
+      content: "\f3ff";
       display: inline-block;
       font-family: "Font Awesome 5 Free";
       font-size: 1em;
@@ -219,18 +232,14 @@
       color: #fff;
       position: absolute;
       right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 46%;
+      transform: rotate(45deg) translate(-50%, 0);
 
       @include media_desktop {
         right: 10px;
       }
 
     }
-  }
-
-  .btn_ticket {
-    @include button($icon:'\f3ff');
     border: 1px solid rgba(255,255,255,.5);
   }
   .btn_staff {
