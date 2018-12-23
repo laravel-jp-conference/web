@@ -5,7 +5,7 @@
     <sec-about></sec-about>
     <sec-access></sec-access>
     <sec-sponsor :sponsors="sponsors"></sec-sponsor>
-    <sec-staff></sec-staff>
+    <sec-staff :staffs="staffs"></sec-staff>
     <sec-footer></sec-footer>
   </section>
 </template>
@@ -21,11 +21,13 @@
 
   export default {
     async asyncData({store}) {
-      const [sponsors] = await Promise.all([
-        store.dispatch("fetchSponsors")
+      const [sponsors,staffs] = await Promise.all([
+        store.dispatch("fetchSponsors"),
+        store.dispatch("fetchStaffs"),
       ])
       return {
-        sponsors
+        sponsors,
+        staffs
       }
     },
     components: {

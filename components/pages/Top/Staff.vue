@@ -9,18 +9,19 @@
         </h2>
         <span class="subTitle">STAFF</span>
         <div class="staffList">
-          <div class="staffList_item">
-            <img src="https://via.placeholder.com/150x150" alt="" class="staffList_icon">
+          <a
+            class="staffList_item"
+            v-for="(staff,key) in staffs"
+            :key="key"
+            :href="staff.url"
+            target="_blank"
+            ref="noopener"
+          >
+            <img :src="staff.avatar_url" alt="" class="staffList_icon">
             <span class="staffList_name">
-              hodhiaohdskalfjhlsj
+              {{ staff.name }}
             </span>
-          </div>
-          <div class="staffList_item" v-for="(val,key) in [1,2,3,4,5,6,7,8,9,10]" :key="key">
-            <img src="https://via.placeholder.com/150x150" alt="" class="staffList_icon">
-            <span class="staffList_name">
-              田中 太郎
-            </span>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -28,6 +29,14 @@
 </template>
 
 <script>
+export default {
+  props:{
+    staffs: {
+      type: Array,
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

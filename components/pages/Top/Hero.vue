@@ -1,17 +1,17 @@
 <template>
 <div class="p-hero">
   <nav class="nav">
-    <div class="nav_nob">
-      <div class="nav_bar"></div>
-      <div class="nav_bar"></div>
-      <div class="nav_bar"></div>
-    </div>
+    <!--<div class="nav_nob">-->
+      <!--<div class="nav_bar"></div>-->
+      <!--<div class="nav_bar"></div>-->
+      <!--<div class="nav_bar"></div>-->
+    <!--</div>-->
     <p class="nav_title">Laravel  JP Conference</p>
-    <div class="nav_share">
-      <p class="nav_shareTitle">share</p>
-      <div class="share_tw"></div>
-      <div class="share_fb"></div>
-    </div>
+    <!--<div class="nav_share">-->
+      <!--<p class="nav_shareTitle">share</p>-->
+      <!--<div class="share_tw"></div>-->
+      <!--<div class="share_fb"></div>-->
+    <!--</div>-->
   </nav>
   <div class="bg_tex">
     <div class="bg_deco">
@@ -56,17 +56,23 @@
   overflow: hidden;
 
   .nav {
-    display: flex;
+    display: none; //TODO FIX
     justify-content: center;
     flex-flow: column nowrap;
     align-items: flex-start;
-    width: 70px;
-    height: 100%;
     background: rgba(229,222,207,.25);
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100000;
+    width: 100%;
+    height: 3em;
+    padding-top: .5em;
+    padding-left: 1em;
+    @include media_desktop {
+      width: 70px;
+      height: 100%;
+    }
   }
   .nav_nob {
     width: 50px;
@@ -295,6 +301,8 @@
   .btn_staff {
     color: #605075;
     background: rgba(255,255,255,.8);
+    max-width: 250px;
+    padding: 10px;
 
     @include media_desktop {
       font-size: 1.5rem;
