@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import secHeader from '~/components/header.vue'
+  import secHeader from '~/components/Header.vue'
   import secHero from '~/components/pages/Top/Hero.vue'
   import secAbout from '~/components/pages/Top/About.vue'
   import secAccess from '~/components/pages/Top/Access.vue'
