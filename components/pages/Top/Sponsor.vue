@@ -53,7 +53,7 @@
               紹介ページへ
             </router-link>
           </div>
-          <div class="sponsorList-others_item" v-for="(val,key) in sponsors.DRINK.sponsors" :key="key">
+          <div class="sponsorList-others_item" v-for="(val,key) in sponsors.ECOBAG.sponsors" :key="key">
             <div class="sponsorOthers_rank">ECOBAG</div>
             <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
             <router-link to="#" class="sponsorList-others_button">
