@@ -1,15 +1,17 @@
 <template>
   <section>
+    <sec-header></sec-header>
     <sec-hero></sec-hero>
     <sec-about></sec-about>
     <sec-access></sec-access>
     <sec-sponsor :sponsors="sponsors"></sec-sponsor>
-    <sec-staff></sec-staff>
+    <sec-staff :staffs="staffs"></sec-staff>
     <sec-footer></sec-footer>
   </section>
 </template>
 
 <script>
+  import secHeader from '~/components/Header.vue'
   import secHero from '~/components/pages/Top/Hero.vue'
   import secAbout from '~/components/pages/Top/About.vue'
   import secAccess from '~/components/pages/Top/Access.vue'
@@ -19,14 +21,17 @@
 
   export default {
     async asyncData({store}) {
-      const [sponsors] = await Promise.all([
-        store.dispatch("fetchSponsors")
+      const [sponsors,staffs] = await Promise.all([
+        store.dispatch("fetchSponsors"),
+        store.dispatch("fetchStaffs"),
       ])
       return {
-        sponsors
+        sponsors,
+        staffs
       }
     },
     components: {
+      secHeader,
       secHero,
       secAbout,
       secAccess,

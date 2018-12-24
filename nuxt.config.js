@@ -1,4 +1,4 @@
-const pkg = require('./package')
+import createMeta from "./service/meta"
 
 module.exports = {
   mode: 'universal',
@@ -7,12 +7,12 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: "Laravel JP Conference" ,
     meta: [
       { charset: 'UTF-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
-      ],
+      ...createMeta(),
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css', integrity: 'sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP', crossorigin:'anonymous'}

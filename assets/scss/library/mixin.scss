@@ -84,6 +84,23 @@
   }
 }
 
+@mixin typo_navTitleEn {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-orientation: mixed;
+  color: #F8F6F2;
+  text-align: left;
+  @include media_desktop {
+    letter-spacing: .8em;
+    writing-mode: vertical-rl;
+  }
+
+}
+
+
 
 //space (margin padding)
 @mixin space_section {

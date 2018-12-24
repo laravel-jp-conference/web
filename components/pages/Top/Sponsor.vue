@@ -7,7 +7,7 @@
         <div class="sponsorGold_rank">GOLD</div>
         <div class="sponsorList-gold">
           <div class="sponsorList-gold_item" v-for="(val,key) in sponsors.GOLD.sponsors" :key="key">
-            <div class="sponsorList-gold_logo" :title="val.name"></div>
+            <a class="sponsorList-gold_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
             <router-link to="#" class="sponsorList-gold_button">
               紹介ページへ
             </router-link>
@@ -18,7 +18,7 @@
         <div class="sponsorSilver_rank">SILVER</div>
         <div class="sponsorList-silver">
           <div class="sponsorList-silver_item" v-for="(val,key) in sponsors.SILVER.sponsors" :key="key">
-          <div class="sponsorList-silver_logo" :title="val.name"></div>
+          <a class="sponsorList-silver_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
           <router-link to="#" class="sponsorList-silver_button">
               紹介ページへ
           </router-link>
@@ -29,7 +29,7 @@
         <div class="sponsorBronze_rank">BRONZE</div>
         <div class="sponsorList-bronze">
           <div class="sponsorList-bronze_item" v-for="(val,key) in sponsors.BRONZE.sponsors" :key="key">
-            <div class="sponsorList-bronze_logo" :title="val.name"></div>
+            <a class="sponsorList-bronze_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
             <router-link to="#" class="sponsorList-bronze_button">
               紹介ページへ
             </router-link>
@@ -41,35 +41,35 @@
         <div class="sponsorList-others">
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.LUNCH.sponsors" :key="key">
             <div class="sponsorOthers_rank">LUNCH</div>
-            <div class="sponsorList-others_logo" :title="val.name"></div>
+            <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
             <router-link to="#" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.DRINK.sponsors" :key="key">
             <div class="sponsorOthers_rank">DRINK</div>
-            <div class="sponsorList-others_logo" :title="val.name"></div>
+            <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
             <router-link to="#" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
-          <div class="sponsorList-others_item" v-for="(val,key) in sponsors.DRINK.sponsors" :key="key">
+          <div class="sponsorList-others_item" v-for="(val,key) in sponsors.ECOBAG.sponsors" :key="key">
             <div class="sponsorOthers_rank">ECOBAG</div>
-            <div class="sponsorList-others_logo" :title="val.name"></div>
+            <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
             <router-link to="#" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.DESIGN.sponsors" :key="key">
             <div class="sponsorOthers_rank">DESIGN</div>
-            <div class="sponsorList-others_logo" :title="val.name"></div>
+            <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
             <router-link to="#" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.SUPPORT.sponsors" :key="key">
             <div class="sponsorOthers_rank">SUPPORT</div>
-            <div class="sponsorList-others_logo" :title="val.name"></div>
+            <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
             <router-link to="#" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
@@ -86,6 +86,19 @@
       sponsors: {
         type: Object,
         required: true
+      }
+    },
+    methods:{
+      imgStyle(sponsor) {
+        if(sponsor.avatar){
+          return {
+            backgroundImage: `url("${sponsor.avatar}")`
+          }
+        }else{
+          return {
+            backgroundImage: `url("https://via.placeholder.com/600x600/&text=sponsor")`
+          }
+        }
       }
     }
   }
@@ -119,8 +132,9 @@
   }
 
   @mixin logo {
+    display: block;
     width: 100%;
-    background-image: url("https://via.placeholder.com/600x600");
+    background-image: url("https://via.placeholder.com/600x600/&text=sponsor");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -134,7 +148,7 @@
   }
 
   @mixin button {
-    display: block;
+    display: none;
     padding: 10px 10px;
     font-size: 1.2rem;
     color: white;

@@ -1,5 +1,18 @@
 <template>
 <div class="p-hero">
+  <nav class="nav">
+    <!--<div class="nav_nob">-->
+      <!--<div class="nav_bar"></div>-->
+      <!--<div class="nav_bar"></div>-->
+      <!--<div class="nav_bar"></div>-->
+    <!--</div>-->
+    <p class="nav_title">Laravel  JP Conference</p>
+    <!--<div class="nav_share">-->
+      <!--<p class="nav_shareTitle">share</p>-->
+      <!--<div class="share_tw"></div>-->
+      <!--<div class="share_fb"></div>-->
+    <!--</div>-->
+  </nav>
   <div class="bg_tex">
     <div class="bg_deco">
       <div class="bg_fuji"></div>
@@ -12,6 +25,13 @@
           <p class="date"><span class="month">2</span>月<span class="day">16</span>日 <span class="week">(土)</span>&nbsp;10:00-</p>
           <p class="location">グランパークカンファレンス</p>
           <a class="tw_hashtag" href="https://twitter.com/hashtag/laraveljpcon" target="_blank"><i class="icon fab fa-twitter"></i>#laraveljpcon</a>
+        </div>
+        <div class="action">
+          <a class="btn_ticket" href="https://laravel-jp-con-2019.peatix.com/view" target="_blank">チケットを購入</a>
+          <a class="btn_staff" href="https://docs.google.com/forms/d/e/1FAIpQLSc3tKz1NCLod5Btz3zq2i_5NpkjnnjtOKwtCEV0dszH4YW-Gg/viewform" target="_blank">
+            当日スタッフに応募
+            <i class="icon fas fa-user"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -35,24 +55,67 @@
   position: relative;
   overflow: hidden;
 
+  .nav {
+    display: none; //TODO FIX
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    background: rgba(229,222,207,.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    width: 100%;
+    height: 3em;
+    padding-top: .5em;
+    padding-left: 1em;
+    @include media_desktop {
+      width: 70px;
+      height: 100%;
+    }
+  }
+  .nav_nob {
+    width: 50px;
+    height: 50px;
+    display: block;
+  }
+
+  .nav_bar {
+    width: 25px;
+    height: 2px;
+    border-radius: 50%;
+    background: #F8F6F2;
+  }
+  .nav_title {
+    @include typo_navTitleEn;
+
+  }
+  .nav_share {
+
+  }
+  .nav_shareTitle {
+    @include typo_navTitleEn;
+  }
+
+
   .bg_tex {
     background-image: url("~assets/images/hero/hero_tex.svg");
     background-size: cover;
   }
 
   .bg_deco {
-    display: inline-block;
+    display: block;
     margin: 0 auto;
     width: 210vw;
     max-width: 1920px;
-    min-height: 540px;
+    min-height: 610px;
     background-size: contain;
     background-image: url( "~assets/images/hero/hero_cloud.svg");
     background-repeat: no-repeat;
 
     @include media_desktop {
       width: 100%;
-      min-height: 900px;
+      min-height: 1000px;
       background-size: cover;
     }
   }
@@ -70,7 +133,7 @@
     transform: translateX(-43%);
     @include media_desktop {
       width: 100vw;
-      min-width: 1880px;
+      min-width: 2200px;
     }
 
     &::after {
@@ -86,18 +149,18 @@
 
   .logo {
     display: inline-block;
-    margin-top: 40px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-bottom: 20px;
     width: 210px;
     height: 210px;
     transform: translateX(20%);
 
     @include media_desktop {
       display: inline-block;
-      margin-top: 60px;
-      margin-bottom: 35px;
-      width: 310px;
-      height: 310px;
+      margin-top: 50px;
+      margin-bottom: 0;
+      width: 290px;
+      height: 290px;
       transform: translateX(90px);
     }
   }
@@ -108,15 +171,19 @@
 
   .info {
     display: block;
+    margin-bottom: 40px;
     width: 100%;
     font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
     font-size: 1.8rem;
     color: #FFF9ED;
-    transform: translateX(20px);
+    text-shadow: 0 0 3px rgba(0,0,0,.3);
+    transform: translateX(15px);
+    position: relative;
+    z-index: 200;
 
     @include media_desktop {
       font-size: 2.5rem;
-      transform: translateX(30px);
+      transform: translateX(12%);
     }
   }
   .year {
@@ -158,7 +225,12 @@
     font-family: "Yu Gothic Medium", YuGothic, "Yu Gothic","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     letter-spacing: 2px;
     color: #FFF9ED;
+    font-size: 1.6rem;
     text-decoration: underline;
+
+    @include media_desktop {
+      font-size: 2rem;
+    }
 
     .icon {
       display: inline-block;
@@ -167,6 +239,80 @@
       vertical-align: -3px;
     }
 
+  }
+
+  .action {
+    display: block;
+    width: 100%;
+    font-size: 1.8rem;
+    color: white;
+    position: relative;
+    transform: translateX(15px);
+    z-index: 200;
+
+    @include media_desktop {
+      font-size: 2.5rem;
+      transform: translateX(12%);
+    }
+
+  }
+
+
+
+  .btn_ticket {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    max-width: 250px;
+    font-size: 1.6rem;
+    color: white;
+    background: #605075;
+    text-align: center;
+    position: relative;
+
+    @include media_desktop {
+      padding: 20px 10px;
+      font-size: 1.8rem;
+    }
+
+    &::after {
+      content: "\f3ff";
+      display: inline-block;
+      font-family: "Font Awesome 5 Free";
+      font-size: 1em;
+      font-style: normal;
+      font-weight: bold;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+      color: #fff;
+      position: absolute;
+      right: 5px;
+      top: 46%;
+      transform: rotate(45deg) translate(-50%, 0);
+
+      @include media_desktop {
+        right: 10px;
+      }
+
+    }
+    border: 1px solid rgba(255,255,255,.5);
+  }
+  .btn_staff {
+    color: #605075;
+    background: rgba(255,255,255,.8);
+    max-width: 250px;
+    padding: 10px;
+
+    @include media_desktop {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+
+    .icon {
+      display: inline-block;
+      margin-left: .5em;
+    }
   }
 
 

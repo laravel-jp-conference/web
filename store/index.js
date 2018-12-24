@@ -22,5 +22,15 @@ export const actions = {
       }
     }
     return sponsors
+  },
+  async fetchStaffs(){
+    const {data} = await this.$axios.get("/staff")
+    const staffs = []
+    for (let title of Object.keys(data.staff)) {
+      for(let staff of data.staff[title]) {
+        staffs.push(staff)
+      }
+    }
+    return staffs
   }
 }
