@@ -21,7 +21,7 @@
           </dl>
           <dl class="access_dl">
             <dt class="access_dt"><i class="icon fas fa-subway"></i>最寄り駅からの所用時間</dt>
-            <dd class="access_dd">JR田町駅（徒歩5分</dd>
+            <dd class="access_dd">JR田町駅（徒歩5分）</dd>
             <dd class="access_dd">地下鉄都営浅草線 三田駅（徒歩7分）</dd>
           </dl>
           <a class="btn" href="https://goo.gl/maps/jjKtmTcffSm" target="_blank">
