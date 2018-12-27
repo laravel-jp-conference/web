@@ -5,7 +5,7 @@
       <img src="~/assets/images/about/about_right.png" class="bg_cloudRight">
       <div class="c-container">
         <h2 class="title">
-          Laravel JP conferene
+          Laravel JP conference
         </h2>
         <span class="subTitle">ABOUT</span>
         <p class="description">
