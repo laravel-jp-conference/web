@@ -2,7 +2,7 @@ const defaultMeta = {
   description: "Laravel JP Conference は、Laravelを利用している・利用する予定のあるエンジニアたちのためのカンファレンスです。",
   title: "Laravel JP Conference" ,
   host: "https://conference2019.laravel.jp",
-  image: "/laracon.png"
+  image: "/laracon.jpg"
 }
 
 export default (args) => {
