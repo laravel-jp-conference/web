@@ -1,5 +1,5 @@
 <template>
-  <div class="l-header">
+  <div class="l-header" :style="styleObject">
     <button class="menu-button" :class="{ 'is-active': isActive }" type="button" @click="onClickMenuButton" data-target="menu">
       <span></span>
       <span></span>
@@ -37,11 +37,16 @@
   export default {
     data () {
       return {
-        isActive: false
+        isActive: false,
+        styleObject: {
+          backgroundColor: ''
+        }
       }
     },
     mounted () {
       document.addEventListener('keydown', this.onKeyDown)
+      window.addEventListener('scroll', this.onScroll)
+      this.heroEl = document.querySelector('.p-hero')
     },
     methods: {
       onClickMenuButton (e) {
@@ -54,6 +59,27 @@
         if (~e.key.indexOf('Esc') && this.isActive) {
           this.isActive = false
         }
+      },
+      onScroll (e) {
+        // rgba(229, 222, 207, 0.25)
+        // rgba(230, 119, 115, 1)
+        let scrollRatio = window.pageYOffset / this.heroEl.offsetHeight
+
+        if (1 < scrollRatio) {
+          scrollRatio = 1
+        } else if (scrollRatio < 0) {
+          scrollRatio = 0
+        }
+
+        this.styleObject.backgroundColor = `rgba(${
+          229 + ((230 - 229) * scrollRatio)
+        }, ${
+          222 + ((119 - 222) * scrollRatio)
+        }, ${
+          207 + ((115 - 207) * scrollRatio)
+        }, ${
+          0.25 + ((1 - 0.25) * scrollRatio)
+        })`
       }
     }
   }
