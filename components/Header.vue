@@ -6,16 +6,16 @@
       <span></span>
     </button>
     <div id="menu" class="menu" :class="{ 'is-active': isActive }">
-      <a class="menu_link" href="#">
+      <a class="menu_link" href="#about" @click="scroll">
         <span class="menu_linkText">ABOUT</span>
       </a>
-      <a class="menu_link" href="#">
+      <a class="menu_link" href="#access" @click="scroll">
         <span class="menu_linkText">ACCESS</span>
       </a>
-      <a class="menu_link" href="#">
+      <a class="menu_link" href="#sponsor" @click="scroll">
         <span class="menu_linkText">SPONSOR</span>
       </a>
-      <a class="menu_link" href="#">
+      <a class="menu_link" href="#staff" @click="scroll">
         <span class="menu_linkText">STAFF</span>
       </a>
     </div>
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+  import VueScrollTo from "vue-scrollto"
+
   export default {
     data () {
       return {
@@ -80,6 +82,12 @@
         }, ${
           0.25 + ((1 - 0.25) * scrollRatio)
         })`
+      },
+      scroll (e) {
+        this.toggleMenu()
+        VueScrollTo.scrollTo(e.currentTarget.getAttribute('href'), 1000, {
+          offset: -60
+        })
       }
     }
   }
