@@ -99,8 +99,13 @@
 
 
   .bg_tex {
+    padding-top: 80px;
     background-image: url("~assets/images/hero/hero_tex.svg");
     background-size: cover;
+
+    @include media_desktop {
+      padding-top: 0;
+    }
   }
 
   .bg_deco {
@@ -321,4 +326,3 @@
 
 
 </style>
-

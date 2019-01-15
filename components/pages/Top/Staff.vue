@@ -1,5 +1,5 @@
 <template>
-  <section class="p-staff">
+  <section class="p-staff" id="staff">
     <div class="bg_deco">
       <img src="~/assets/images/staff/staff_left.png" class="bg_cloudLerf">
       <img src="~/assets/images/staff/staff_right.png" class="bg_cloudRight">
@@ -131,4 +131,3 @@ export default {
 
   }
 </style>
-
