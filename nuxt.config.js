@@ -1,4 +1,5 @@
 import createMeta from "./service/meta"
+import axios from "axios"
 
 module.exports = {
   mode: 'universal',
@@ -19,6 +20,21 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css', integrity: 'sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP', crossorigin:'anonymous'}
       ]
     },
+  generate: {
+    async routes(callback) {
+      const path = []
+      const request = axios.create({
+        baseURL: 'https://fortee.jp/laravel-jp-conference-2019/api/'
+      })
+			const {data} = await request("/sponsors")
+			for(let plan of data.sponsor_plans) {
+			  for(let sponsor of plan.sponsors) {
+			    path.push(`/sponsor/${sponsor.name}`)
+        }
+			}
+      callback(null, path)
+    }
+  },
 
   /*
   ** Customize the progress-bar color
