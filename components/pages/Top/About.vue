@@ -1,5 +1,5 @@
 <template>
-  <div class="p-about">
+  <div class="p-about" id="about">
     <div class="bg_deco">
       <img src="~/assets/images/about/about_left.png" class="bg_cloudLerf">
       <img src="~/assets/images/about/about_right.png" class="bg_cloudRight">
