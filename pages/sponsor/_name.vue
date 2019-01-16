@@ -13,7 +13,7 @@
               <p class="sponsor-name">株式会社サンプル</p>
             </div>
             <div class="logo-box">
-              <img src="http://placehold.jp/150x150.png" class="logo-img">
+              <img src="https://placehold.jp/150x150.png" class="logo-img">
             </div>
             <div class="sponsor-description">
               <p>Laravel JP Conferenceは PHPのフレームワークであるLaravelをメインテーマとした技術カンファレンスです。「Laravel JP」を冠したイベントとしては日本初開催となります。</p>
