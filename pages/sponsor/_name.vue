@@ -13,7 +13,7 @@
               <p class="sponsor-name">{{ sponsor.name }}</p>
             </div>
             <div class="logo-box">
-              <img src="https://placehold.jp/150x150.png" class="logo-img">
+              <img :src="sponsor.avatar" class="logo-img">
             </div>
             <div class="sponsor-description">
               {{ sponsor.pr }}
