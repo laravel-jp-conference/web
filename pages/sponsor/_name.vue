@@ -8,22 +8,18 @@
             <div class="sponsor-title">
               <p class="ornament">SPONSOR</p>
               <div class="silver-card">
-                <span class="silver">SILVER</span>
+                <span class="silver">{{ sponsor.plan }}</span>
               </div>
-              <p class="sponsor-name">株式会社サンプル</p>
+              <p class="sponsor-name">{{ sponsor.name }}</p>
             </div>
             <div class="logo-box">
               <img src="https://placehold.jp/150x150.png" class="logo-img">
             </div>
             <div class="sponsor-description">
-              <p>Laravel JP Conferenceは PHPのフレームワークであるLaravelをメインテーマとした技術カンファレンスです。「Laravel JP」を冠したイベントとしては日本初開催となります。</p>
-              <br>
-              <p>Laravelとは2011年6月に初版が公開されたPHPによるオープンソースなWebアプリケーションフレームワーク。PHPのフレームワークの中でもGithub stars数は一番多く、Google Trendsによる人気の動向でも日本でもっとも注目を集めています。(2018年9月現在)</p>
-              <br>
-              <p>本イベントでは主に一般公募から参加していただくスピーカーによるトークセッションと、スポンサー様から参加していただくスピーカーのトークセッション他、懇親会や参加者同士で意見交換などができる場の提供を予定しています。</p>
+              {{ sponsor.pr }}
             </div>
             <div class="button-box-a">
-              <a class="btn button-a" href="#" target="_blank">
+              <a class="btn button-a" :href="sponsor.url" target="_blank">
                 スポンサーページを開く
               </a>
             </div>
@@ -41,7 +37,15 @@
 
 <script>
   export default {
-    name: 'sponsor'
+    name: 'sponsor',
+    async asyncData({store, route}) {
+      const [sponsor] = await Promise.all([
+          store.dispatch("fetchSponsorData", route.params.name),
+      ])
+      return {
+        sponsor
+      }
+    }
   }
 </script>
 
