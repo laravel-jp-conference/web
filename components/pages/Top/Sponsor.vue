@@ -8,7 +8,7 @@
         <div class="sponsorList-gold">
           <div class="sponsorList-gold_item" v-for="(val,key) in sponsors.GOLD.sponsors" :key="key">
             <a class="sponsorList-gold_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
-            <router-link to="#" class="sponsorList-gold_button">
+            <router-link :to="`/sponsor/${val.name}`" class="sponsorList-gold_button">
               紹介ページへ
             </router-link>
           </div>
@@ -19,7 +19,7 @@
         <div class="sponsorList-silver">
           <div class="sponsorList-silver_item" v-for="(val,key) in sponsors.SILVER.sponsors" :key="key">
           <a class="sponsorList-silver_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
-          <router-link to="#" class="sponsorList-silver_button">
+          <router-link :to="`/sponsor/${val.name}`" class="sponsorList-silver_button">
               紹介ページへ
           </router-link>
           </div>
@@ -30,7 +30,7 @@
         <div class="sponsorList-bronze">
           <div class="sponsorList-bronze_item" v-for="(val,key) in sponsors.BRONZE.sponsors" :key="key">
             <a class="sponsorList-bronze_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
-            <router-link to="#" class="sponsorList-bronze_button">
+            <router-link :to="`/sponsor/${val.name}`" class="sponsorList-bronze_button">
               紹介ページへ
             </router-link>
           </div>
@@ -42,35 +42,35 @@
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.LUNCH.sponsors" :key="key">
             <div class="sponsorOthers_rank">LUNCH</div>
             <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
-            <router-link to="#" class="sponsorList-others_button">
+            <router-link :to="`/sponsor/${val.name}`" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.DRINK.sponsors" :key="key">
             <div class="sponsorOthers_rank">DRINK</div>
             <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
-            <router-link to="#" class="sponsorList-others_button">
+            <router-link :to="`/sponsor/${val.name}`" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.ECOBAG.sponsors" :key="key">
             <div class="sponsorOthers_rank">ECOBAG</div>
             <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
-            <router-link to="#" class="sponsorList-others_button">
+            <router-link :to="`/sponsor/${val.name}`" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.DESIGN.sponsors" :key="key">
             <div class="sponsorOthers_rank">DESIGN</div>
             <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
-            <router-link to="#" class="sponsorList-others_button">
+            <router-link :to="`/sponsor/${val.name}`" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
           <div class="sponsorList-others_item" v-for="(val,key) in sponsors.SUPPORT.sponsors" :key="key">
             <div class="sponsorOthers_rank">SUPPORT</div>
             <a class="sponsorList-others_logo" :style="imgStyle(val)" :href="val.url" target="_blank" rel="noopener" :title="val.name"></a>
-            <router-link to="#" class="sponsorList-others_button">
+            <router-link :to="`/sponsor/${val.name}`" class="sponsorList-others_button">
               紹介ページへ
             </router-link>
           </div>
@@ -148,8 +148,8 @@
   }
 
   @mixin button {
-    display: none;
-    padding: 10px 10px;
+    /*display: none;*/
+    padding: 10px 20px 10px 10px;
     font-size: 1.2rem;
     color: white;
     background: $clr_btn;
@@ -157,7 +157,7 @@
     position: relative;
 
     @include media_desktop {
-      padding: 20px 10px;
+      padding: 20px 30px 20px 20px;
       font-size: 1.4rem;
     }
 
@@ -320,6 +320,9 @@
     }
     .sponsorList-bronze_button{
       @include button;
+      @include media_desktop(){
+        font-size: 1.2rem;
+      }
     }
 
     // sponsor OHTERS
