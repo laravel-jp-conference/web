@@ -132,6 +132,10 @@
         right: 20px;
       }
     }
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
   }
   .button-b {
     width: 90%;
@@ -165,6 +169,10 @@
       @include media_desktop {
         left: 20px;
       }
+    }
+    &:hover {
+      color: white;
+      text-decoration: underline;
     }
   }
   .content-box {
