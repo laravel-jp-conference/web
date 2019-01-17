@@ -148,8 +148,8 @@
   }
 
   @mixin button {
-    display: none;
-    padding: 10px 10px;
+    /*display: none;*/
+    padding: 10px 20px 10px 10px;
     font-size: 1.2rem;
     color: white;
     background: $clr_btn;
@@ -157,7 +157,7 @@
     position: relative;
 
     @include media_desktop {
-      padding: 20px 10px;
+      padding: 20px 30px 20px 20px;
       font-size: 1.4rem;
     }
 
@@ -320,6 +320,9 @@
     }
     .sponsorList-bronze_button{
       @include button;
+      @include media_desktop(){
+        font-size: 1.2rem;
+      }
     }
 
     // sponsor OHTERS
