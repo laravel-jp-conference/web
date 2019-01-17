@@ -243,6 +243,8 @@
           -webkit-transform: translateY(-50%) translateX(-50%);
           transform: translateY(-50%) translateX(-50%);
           border-radius: 1000px;
+          width: 150px;
+          height: 150px;
         }
       }
       .sponsor-description {
