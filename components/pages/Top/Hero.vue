@@ -42,49 +42,6 @@
   position: relative;
   overflow: hidden;
 
-  .nav {
-    display: none; //TODO FIX
-    justify-content: center;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    background: rgba(229,222,207,.25);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100000;
-    width: 100%;
-    height: 3em;
-    padding-top: .5em;
-    padding-left: 1em;
-    @include media_desktop {
-      width: 70px;
-      height: 100%;
-    }
-  }
-  .nav_nob {
-    width: 50px;
-    height: 50px;
-    display: block;
-  }
-
-  .nav_bar {
-    width: 25px;
-    height: 2px;
-    border-radius: 50%;
-    background: #F8F6F2;
-  }
-  .nav_title {
-    @include typo_navTitleEn;
-
-  }
-  .nav_share {
-
-  }
-  .nav_shareTitle {
-    @include typo_navTitleEn;
-  }
-
-
   .bg_tex {
     padding-top: 80px;
     background-image: url("~assets/images/hero/hero_tex.svg");
