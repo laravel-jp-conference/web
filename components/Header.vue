@@ -26,8 +26,8 @@
     <div class="share">
       <div class="share_title">share</div>
       <div class="share_btn">
-        <a class="share_tw" href="#"><i class="fab fa-twitter"></i></a>
-        <a class="share_fb" href="#"><i class="fab fa-facebook-square"></i></a>
+        <a class="share_tw" href="http://twitter.com/share?url=https://conference2019.laravel.jp/&amp;text=Laravel JP Conference 2019" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class="share_fb" href="https://www.facebook.com/sharer.php?src=bm&u=https://conference2019.laravel.jp/&t=Laravel JP Conference 2019" target="_blank"><i class="fab fa-facebook-square"></i></a>
       </div>
     </div>
   </div>
@@ -328,6 +328,11 @@
         background: white;
         color: #1DA1F2;
 
+        &:hover {
+          opacity: .8;
+          text-decoration: none;
+        }
+
         @include media_desktop {
           margin-right: 0;
           margin-bottom: 10px;
@@ -345,6 +350,11 @@
         height: 35px;
         background: white;
         color: #4267B2;
+
+        &:hover {
+          opacity: .8;
+          text-decoration: none;
+        }
 
         @include media_desktop {
           width: 40px;

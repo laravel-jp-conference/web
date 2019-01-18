@@ -1,18 +1,5 @@
 <template>
 <div class="p-hero">
-  <nav class="nav">
-    <!--<div class="nav_nob">-->
-      <!--<div class="nav_bar"></div>-->
-      <!--<div class="nav_bar"></div>-->
-      <!--<div class="nav_bar"></div>-->
-    <!--</div>-->
-    <p class="nav_title">Laravel  JP Conference</p>
-    <!--<div class="nav_share">-->
-      <!--<p class="nav_shareTitle">share</p>-->
-      <!--<div class="share_tw"></div>-->
-      <!--<div class="share_fb"></div>-->
-    <!--</div>-->
-  </nav>
   <div class="bg_tex">
     <div class="bg_deco">
       <div class="bg_fuji"></div>
