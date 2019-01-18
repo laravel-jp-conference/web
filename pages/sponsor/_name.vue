@@ -1,41 +1,44 @@
 <template>
-  <div class="sponsor">
-    <div class="bg_tex">
-      <div class="bg_deco">
-        <div class="bg_fuji"></div>
-        <div class="content-box">
-          <div class="sponsor-box">
-            <div class="sponsor-title">
+  <div>
+    <sec-header></sec-header>
+    <div class="sponsor">
+      <div class="bg_tex">
+        <div class="bg_deco">
+          <div class="bg_fuji"></div>
+          <div class="c-container">
+            <div class="sponsor-box">
               <p class="ornament">SPONSOR</p>
-              <div class="silver-card">
-                <span class="silver">{{ sponsor.plan }}</span>
+              <div class="sponsor-heading">
+                <div class="plan-card">
+                  <span class="plan">{{ sponsor.plan }}</span>
+                </div>
+                <p class="sponsor-name">{{ sponsor.name }}</p>
               </div>
-              <p class="sponsor-name">{{ sponsor.name }}</p>
-            </div>
-            <div class="logo-box">
-              <img :src="sponsor.avatar" class="logo-img">
-            </div>
-            <div class="sponsor-description">
-              {{ sponsor.pr }}
-            </div>
-            <div class="button-box-a">
-              <a class="btn button-a" :href="sponsor.url" target="_blank">
+              <div class="logo-box">
+                <img :src="sponsor.avatar" class="logo-img">
+              </div>
+              <div class="sponsor-description">
+                {{ sponsor.pr }}
+              </div>
+              <a class="btn button-sponsorLink" :href="sponsor.url" target="_blank">
                 スポンサーページを開く
               </a>
             </div>
-          </div>
-          <div class="button-box-b">
-            <router-link to="/" class="btn button-b">
+            <router-link to="/" class="btn button-top">
               トップページに戻る
             </router-link>
           </div>
         </div>
       </div>
     </div>
+    <sec-footer></sec-footer>
   </div>
 </template>
 
 <script>
+  import secHeader from '~/components/Header.vue'
+  import secFooter from '~/components/Footer.vue'
+
   export default {
     name: 'sponsor',
     head() {
@@ -50,13 +53,20 @@
       return {
         sponsor
       }
-    }
+    },
+    components: {
+        secHeader,
+        secFooter
+      }
   }
 </script>
 
 <style lang="scss" scoped>
   @import "~/assets/scss/common.scss";
+
   .sponsor {
+    text-align: center;
+
     background: #ff554c;
     background: -moz-linear-gradient(top, #ff554c 0%, #a08383 100%);
     background: -webkit-linear-gradient(top, #ff554c 0%,#a08383 100%);
@@ -64,23 +74,27 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff554c', endColorstr='#a08383',GradientType=0 );
     position: relative;
     overflow: hidden;
+
+
     .bg_tex {
       background-image: url("~assets/images/hero/hero_tex.svg");
       background-size: cover;
     }
     .bg_deco {
+      @include space_section;
       display: inline-block;
       margin: 0 auto;
-      width: 210vw;
+      padding-bottom: 300px;
+      width: 100%;
       max-width: 1920px;
       min-height: 540px;
-      background-size: contain;
       background-image: url( "~assets/images/hero/hero_cloud.svg");
+      background-size: 140%;
+      background-position: center;
       background-repeat: no-repeat;
+
       @include media_desktop {
-        width: 100%;
-        min-height: 900px;
-        background-size: cover;
+        padding-bottom: 600px;
       }
     }
     .bg_fuji {
@@ -104,175 +118,174 @@
         padding-top: 42%;
       }
     }
-  }
-  .button-a {
-    width: 90%;
-    display: block;
-    padding: 20px;
-    margin: 0 auto;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: $clr_btn;
-    position: relative;
-    @include media_desktop {
-      max-width: 350px;
-    }
-    &::after {
-      content: "\f35d";
-      display: inline-block;
-      font-family: "Font Awesome 5 Free";
-      font-size: .8em;
-      font-style: normal;
-      font-weight: bold;
-      font-variant: normal;
-      text-rendering: auto;
-      line-height: 1;
-      color: #fff;
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      @include media_desktop {
-        right: 20px;
-      }
-    }
-    &:hover {
-      color: white;
-      text-decoration: underline;
-    }
-  }
-  .button-b {
-    width: 90%;
-    display: block;
-    padding: 20px;
-    margin: 0 auto;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: rgba(230, 119, 115, 0.5);
-    border: solid 1px #fff;
-    position: relative;
-    @include media_desktop {
-      max-width: 350px;
-    }
-    &::before {
-      content: "\f104";
-      display: inline-block;
-      font-family: "Font Awesome 5 Free";
-      font-size: .8em;
-      font-style: normal;
-      font-weight: bold;
-      font-variant: normal;
-      text-rendering: auto;
-      line-height: 1;
-      color: #fff;
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      @include media_desktop {
-        left: 20px;
-      }
-    }
-    &:hover {
-      color: white;
-      text-decoration: underline;
-    }
-  }
-  .content-box {
-    width: 95vw;
-    margin: 90px 10px;
-    @include media_desktop {
-      width: 55%;
-      max-width: 650px;
-      margin: 90px auto;
-    }
+
     .sponsor-box {
+      display: inline-block;
+      margin: 60px 0 40px;
       background: #f8f7f2;
+      width: 100%;
+      max-width: 750px;
       position: relative;
-      .ornament {
-        @include typo_sectionSubTitleEn;
-        font-size: 30px;
-        z-index: 10;
-        top: -30px;
-        right: -30px;
-        position: absolute;
-        @include media_desktop {
-          font-size: 4rem;
-        }
+
+      @include media_desktop {
+        margin: 40px 0;
       }
-      .sponsor-title {
-        height: 140px;
-        position: relative;
-        @include media_desktop {
-          height: 180px;
-        }
-        .silver-card {
-          height: 30px;
-          width: 130px;
-          top: 20px;
-          background: #64547b;
-          text-align: center;
-          position: absolute;
-          @include media_desktop {
-            height: 42px;
-            width: 153px;
-          }
-          .silver {
-            font-family: YuMincho, Medium;
-            font-size: 14px;
-            color: #ffffff;
-            line-height: 30px;
-            @include media_desktop {
-              font-size: 20px;
-              line-height: 42px;
-            }
-          }
-        }
-        .sponsor-name {
-          @include typo_sectionTitleJa;
-          top: 80px;
-          margin: 0 30px;
-          position: absolute;
-          @include media_desktop {
-            top: 100px;
-            margin: 0 50px;
-          }
-        }
+
+    }
+    .ornament {
+      @include typo_sectionSubTitleEn;
+      font-size: 30px;
+      z-index: 10;
+      top: -30px;
+      right: -30px;
+      position: absolute;
+      @include media_desktop {
+        font-size: 4rem;
       }
-      .logo-box {
+    }
+
+    .sponsor-heading {
+      text-align: left;
+    }
+    .plan {
+      display: inline-block;
+      margin: 20px 0 20px;
+      padding: 10px 40px;
+      text-align: center;
+      font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+      font-size: 1.4rem;
+      color: white;
+      background: $clr_fontBase;
+
+      @include media_desktop {
+        margin: 20px 0 35px;
+        font-size: 2rem;
+      }
+    }
+    .sponsor-name {
+      @include typo_sectionTitleJa;
+      margin: 0 20px 20px;
+
+      @media screen and (min-width: 320px) {
+        font-size: 1.8rem;
+      }
+
+      @include media_desktop {
+        margin: 0 40px 35px;
+      }
+
+    }
+    .logo-box {
+      display: block;
+      width: 100%;
+      background: #ffffff;
+      text-align: center;
+
+      .logo-img {
+        display: inline-block;
         width: 100%;
-        height: 200px;
-        background: #ffffff;
-        position: relative;
+        height: auto;
         @include media_desktop {
-          height: 250px;
+          width: 300px;
         }
-        .logo-img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-          border-radius: 1000px;
-          width: 150px;
-          height: 150px;
-        }
-      }
-      .sponsor-description {
-        color: #605075;
-        padding: 30px;
-        @include media_desktop {
-          margin: 0 30px;
-        }
-      }
-      .button-box-a {
-        padding-bottom: 50px;
       }
     }
-    .button-box-b {
-      padding: 50px 0 300px 0;
+    .sponsor-description {
+      margin: 20px 0 40px;
+      padding: 0 20px;
+      text-align: left;
+      color: $clr_fontBase;
+      line-height: 1.8;
+
+      @include media_desktop {
+        margin: 30px 0 60px;
+        padding: 0 40px;
+      }
     }
+    .button-sponsorLink {
+      display: block;
+      margin: 0 auto 40px;
+      padding: 20px;
+      width: 100%;
+      max-width: 280px;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: $clr_btn;
+      position: relative;
+      @include media_desktop {
+        max-width: 350px;
+        margin: 0 auto 60px;
+      }
+      &::after {
+        content: "\f35d";
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-size: .8em;
+        font-style: normal;
+        font-weight: bold;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        color: #fff;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include media_desktop {
+          right: 20px;
+        }
+      }
+      &:hover {
+        color: white;
+        text-decoration: none;
+        opacity: .8;
+      }
+    }
+
+    .button-top {
+      display: block;
+      margin: 0 auto;
+      padding: 20px;
+      width: 100%;
+      max-width: 280px;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.1);
+      border: solid 1px #fff;
+      position: relative;
+      @include media_desktop {
+        max-width: 350px;
+      }
+      &::before {
+        content: "\f104";
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-size: .8em;
+        font-style: normal;
+        font-weight: bold;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        color: #fff;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include media_desktop {
+          left: 20px;
+        }
+      }
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+
+
+
+
+
   }
 </style>

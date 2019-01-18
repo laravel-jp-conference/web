@@ -82,6 +82,9 @@
   @include media_desktop {
     display: block;
   }
+  @media screen and (min-width:769px) and ( max-width:1000px) {
+    display: none;
+  }
 }
 
 @mixin typo_navTitleEn {

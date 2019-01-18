@@ -21,7 +21,7 @@
     </div>
     <p class="title">
       <span class="text">Laravel JP Conference</span>
-      <img src="~/assets/images/logo-rectangle-white.svg" alt="Laravel JP Conference">
+      <router-link to="/"><img src="~/assets/images/logo-rectangle-white.svg" alt="Laravel JP Conference"></router-link>
     </p>
     <div class="share">
       <div class="share_title">share</div>
@@ -65,7 +65,10 @@
       onScroll (e) {
         // rgba(229, 222, 207, 0.25)
         // rgba(230, 119, 115, 1)
-        let scrollRatio = window.pageYOffset / this.heroEl.offsetHeight
+        let scrollRatio = 100;
+        if(this.heroEl){
+          scrollRatio = window.pageYOffset / this.heroEl.offsetHeight
+        }
 
         if (1 < scrollRatio) {
           scrollRatio = 1
@@ -84,10 +87,15 @@
         })`
       },
       scroll (e) {
-        this.toggleMenu()
-        VueScrollTo.scrollTo(e.currentTarget.getAttribute('href'), 1000, {
-          offset: -60
-        })
+        e.preventDefault()
+        if(this.$route.path == "/"){
+          this.toggleMenu()
+          VueScrollTo.scrollTo(e.currentTarget.getAttribute('href'), 1000, {
+            offset: -60
+          })
+        }else{
+          this.$router.push("/"+e.currentTarget.getAttribute('href'))
+        }
       }
     }
   }
