@@ -38,6 +38,11 @@
 <script>
   export default {
     name: 'sponsor',
+    head() {
+      return {
+        title: this.sponsor.name
+      }
+    },
     async asyncData({store, route}) {
       const [sponsor] = await Promise.all([
           store.dispatch("fetchSponsorData", route.params.name),
