@@ -199,6 +199,10 @@
     }
 
     background-color: #FAEAE6;
+    background-image: url("~assets/images/sponsor/bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
 
     // sponsor GOLD
