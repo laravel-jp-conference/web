@@ -105,7 +105,12 @@
 //space (margin padding)
 @mixin space_section {
   padding: 30px 0 40px;
+
   @include media_desktop {
     padding: 60px 0 80px;
+  }
+
+  @media screen and (min-width:769px) and ( max-width:1100px) {
+    padding-left: 90px;
   }
 }

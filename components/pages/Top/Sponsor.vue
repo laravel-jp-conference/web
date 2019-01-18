@@ -148,7 +148,7 @@
   }
 
   @mixin button {
-    /*display: none;*/
+    display: block;
     padding: 10px 20px 10px 10px;
     font-size: 1.2rem;
     color: white;
@@ -156,9 +156,15 @@
     text-align: center;
     position: relative;
 
+
     @include media_desktop {
       padding: 20px 30px 20px 20px;
       font-size: 1.4rem;
+    }
+
+    &:hover {
+      opacity: .8;
+      text-decoration: none;
     }
 
     &::after {
@@ -193,6 +199,10 @@
     }
 
     background-color: #FAEAE6;
+    background-image: url("~assets/images/sponsor/bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
 
     // sponsor GOLD
