@@ -21,7 +21,7 @@ module.exports = {
       ]
     },
   generate: {
-    async routes(callback) {
+    async routes() {
       const path = []
       const request = axios.create({
         baseURL: 'https://fortee.jp/laravel-jp-conference-2019/api/'
@@ -32,7 +32,7 @@ module.exports = {
 			    path.push(`/sponsor/${sponsor.name}`)
         }
 			}
-      callback(null, path)
+      return path
     }
   },
 
