@@ -1,6 +1,6 @@
 
   <template>
-    <section class="p-access">
+    <section class="p-access" id="access">
       <div class="bg_deco">
 
       </div>
