@@ -16,6 +16,9 @@
           <br>
           本イベントでは主に一般公募から参加していただくスピーカーによるトークセッションと、スポンサー様から参加していただくスピーカーのトークセッション他、懇親会や参加者同士で意見交換などができる場の提供を予定しています。<br><br>
         </p>
+        <div class="timetable-button">
+          <a class="btn_timetable" href="https://fortee.jp/laravel-jp-conference-2019/timetable" target="_blank">Time Table</a>
+        </div>
         <div class="parent">
         </div>
         <div class="text">
@@ -96,6 +99,23 @@
       color: $clr_fontBase;
       position: relative;
       z-index: 10;
+    }
+
+    .btn_timetable {
+      display: block;
+      margin-bottom: 15px;
+      padding: 10px;
+      max-width: 250px;
+      font-size: 1.6rem;
+      color: white;
+      background: #605075;
+      text-align: center;
+      position: relative;
+
+      @include media_desktop {
+        padding: 15px 10px;
+        font-size: 1.8rem;
+      }
     }
   }
 
