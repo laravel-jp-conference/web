@@ -12,6 +12,9 @@
       <a class="menu_link" href="#access" @click="scroll">
         <span class="menu_linkText">ACCESS</span>
       </a>
+      <a class="menu_link" href="https://fortee.jp/laravel-jp-conference-2019/timetable" target="_blank">
+        <span class="menu_linkText">TIME TABLE</span>
+      </a>
       <a class="menu_link" href="#sponsor" @click="scroll">
         <span class="menu_linkText">SPONSOR</span>
       </a>
