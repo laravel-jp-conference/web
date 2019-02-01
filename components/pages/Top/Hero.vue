@@ -15,10 +15,6 @@
         </div>
         <div class="action">
           <a class="btn_ticket" href="https://laravel-jp-con-2019.peatix.com/view" target="_blank">チケットを購入</a>
-          <a class="btn_staff" href="https://docs.google.com/forms/d/e/1FAIpQLSc3tKz1NCLod5Btz3zq2i_5NpkjnnjtOKwtCEV0dszH4YW-Gg/viewform" target="_blank">
-            当日スタッフに応募
-            <i class="icon fas fa-user"></i>
-          </a>
         </div>
       </div>
     </div>
