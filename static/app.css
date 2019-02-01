@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', YuGothic, 'ヒラギノ角ゴ ProN W3',
+        Hiragino Kaku Gothic ProN, Arial, 'メイリオ', Meiryo, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.section {
+    width: 100%;
+    height: 100vh;
+}
+
+.section-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 0.75rem;
+    text-decoration: none;
+    text-align: center;
+    color: #f4645f;
+    border: #f4645f 1px solid;
+    border-radius: 2rem;
+}
+
+.btn.white {
+    color: #fefefe;
+    border: #fefefe 1px solid;
+    transition: all 0.2s ease;
+}
+
+.btn.white:hover {
+    color: #f4645f;
+    background: #fefefe;
+}
+
+/**
+ * Hero Content
+ */
+.section.hero {
+    background: #f4645f;
+}
+
+.section.hero .title {
+    padding: 1rem 1rem 2rem;
+    color: #fefefe;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.section.hero .description {
+    color: #fefefe;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.section.hero .btn-wrap {
+    display: flex;
+    padding: 2rem 1rem 1rem;
+}
+
+.section.hero .btn-wrap .btn {
+    min-width: 200px;
+    margin-right: 1rem;
+}
+
+.section.hero .btn-wrap .btn:last-of-type {
+    margin-right: 0;
+}
+
+.section.hero .unit {
+    padding: 1rem;
+}
+
+.section.hero .hashtag {
+    color: #fefefe;
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.section.hero .hashtag:hover {
+    opacity: 0.5;
+}
+
+/**
+ * Principle
+ */
+.principle .section-inner {
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.principle .title {
+    padding: 1rem 0;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.principle p {
+    padding-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .section.hero .title {
+        font-size: 3rem;
+    }
+
+    .section.hero .btn-wrap {
+        flex-direction: column;
+    }
+
+    .section.hero .btn-wrap .btn {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .section.hero .description {
+        font-size: 1rem;
+    }
+
+    .principle .section-inner {
+        height: auto;
+    }
+}
