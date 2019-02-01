@@ -11,6 +11,7 @@ const sponsorsMap = {
 const getSponsorKey = plan_name => {
   return sponsorsMap[plan_name]
 }
+const acceptStaffTitles = ["実行委員長", "コアスタッフ"]
 
 export const actions = {
   async fetchSponsors(){
@@ -28,6 +29,9 @@ export const actions = {
     const {data} = await this.$axios.get("/staff")
     const staffs = []
     for (let title of Object.keys(data.staff)) {
+      if (acceptStaffTitles.indexOf(title) === -1) {
+        continue
+      }
       for(let staff of data.staff[title]) {
         staffs.push(staff)
       }
