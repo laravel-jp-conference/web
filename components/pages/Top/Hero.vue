@@ -14,7 +14,7 @@
           <a class="tw_hashtag" href="https://twitter.com/hashtag/laraveljpcon" target="_blank"><i class="icon fab fa-twitter"></i>#laraveljpcon</a>
         </div>
         <div class="action">
-          <a class="btn_ticket" href="https://laravel-jp-con-2019.peatix.com/view" target="_blank">チケットを購入</a>
+          <a class="btn_ticket" href="https://conference2020.laravel.jp/" target="_blank">2020年も開催決定！</a>
         </div>
       </div>
     </div>
@@ -214,34 +214,12 @@
     background: #605075;
     text-align: center;
     position: relative;
+    border: 1px solid rgba(255,255,255,.5);
 
     @include media_desktop {
       padding: 20px 10px;
       font-size: 1.8rem;
     }
-
-    &::after {
-      content: "\f3ff";
-      display: inline-block;
-      font-family: "Font Awesome 5 Free";
-      font-size: 1em;
-      font-style: normal;
-      font-weight: bold;
-      font-variant: normal;
-      text-rendering: auto;
-      line-height: 1;
-      color: #fff;
-      position: absolute;
-      right: 5px;
-      top: 46%;
-      transform: rotate(45deg) translate(-50%, 0);
-
-      @include media_desktop {
-        right: 10px;
-      }
-
-    }
-    border: 1px solid rgba(255,255,255,.5);
   }
 
 }
